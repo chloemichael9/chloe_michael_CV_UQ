@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FAF8F5;
+    --bg:#FBF8EF;
     --bg-panel:#FFFFFF;
-    --ink:#1C1C1C;
-    --ink-dim:#55585E;
-    --ink-faint:#8E9197;
-    --gold:#C8102E;
-    --sage:#E0646F;
+    --ink:#152B1C;
+    --ink-dim:#4E5E51;
+    --ink-faint:#8B9A8C;
+    --gold:#2FA84A;
+    --sage:#12B3B0;
     --pink:#FF5C7A;
     --duckegg:#3E6C74;
-    --line:rgba(28,28,28,0.10);
-    --line-strong:rgba(28,28,28,0.22);
+    --line:rgba(21,43,28,0.10);
+    --line-strong:rgba(21,43,28,0.22);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -30,7 +30,7 @@
     line-height:1.6;
     overflow-x:hidden;
   }
-  ::selection{background:var(--gold); color:#FFFFFF;}
+  ::selection{background:var(--gold); color:#FBF8EF;}
 
   h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em;}
   .mono{font-family:'IBM Plex Mono',monospace;}
@@ -108,16 +108,16 @@
   /* ---------- stats ---------- */
   #skills{padding:0 8vw 36px;}
   .skill-pill{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#FFFFFF;
-    background:#C8102E; border:1px solid #C8102E; border-radius:999px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#FDF3B0;
+    background:#1F7A38; border:1px solid #1F7A38; border-radius:999px;
     padding:9px 16px; transition:all .3s ease;
   }
-  .skill-pill:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(28,28,28,0.15); }
-  .skill-pill.c-gold, .skill-pill.c-sage, .skill-pill.c-pink{ color:#FFFFFF; border-color:#C8102E; }
+  .skill-pill:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(21,43,28,0.15); }
+  .skill-pill.c-gold, .skill-pill.c-sage, .skill-pill.c-pink{ color:#FDF3B0; border-color:#1F7A38; }
   #results{padding:0 8vw 8px;}
   #stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:920px;}
   .stat{background:var(--bg-panel); border:1px solid var(--line); border-radius:12px; padding:16px 16px 14px; display:flex; flex-direction:column; gap:4px;}
-  .stat-fig{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(24px,3vw,32px); color:#C8102E; line-height:1.1; font-variant-numeric:tabular-nums;}
+  .stat-fig{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(24px,3vw,32px); color:#1F7A38; line-height:1.1; font-variant-numeric:tabular-nums;}
   .stat-cap{font-size:13px; color:var(--ink-dim); line-height:1.4;}
   .stat-co{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-top:2px;}
   @media (max-width:760px){ #stats{grid-template-columns:1fr 1fr;} }
@@ -137,7 +137,7 @@
     background:var(--bg-panel); border:2px solid var(--line-strong);
     display:flex; align-items:center; justify-content:center; transition:all .4s ease;
   }
-  .company.in .company-dot{border-color:var(--gold); box-shadow:0 0 0 4px rgba(200,16,46,0.14);}
+  .company.in .company-dot{border-color:var(--gold); box-shadow:0 0 0 4px rgba(47,168,74,0.14);}
   .company-dot::after{content:''; width:7px; height:7px; border-radius:50%; background:var(--ink-faint); transition:background .4s ease;}
   .company.in .company-dot::after{background:var(--gold);}
 
@@ -187,7 +187,7 @@
     content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent);
     transform:scaleY(0); transform-origin:top; transition:transform .4s ease;
   }
-  .brand-card:hover{border-color:var(--line-strong); transform:translateY(-3px); box-shadow:0 10px 24px rgba(28,28,28,0.08);}
+  .brand-card:hover{border-color:var(--line-strong); transform:translateY(-3px); box-shadow:0 10px 24px rgba(21,43,28,0.08);}
   .brand-card:hover::before{transform:scaleY(1);}
   .brand-mark{font-family:'Fraunces',serif; font-weight:700; font-size:clamp(22px,2.6vw,30px); color:var(--accent); letter-spacing:-0.01em;}
   .brand-cap{margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint);}
@@ -500,14 +500,14 @@
         const a=nodes[i], b=nodes[j];
         const d = Math.hypot(a.x-b.x, a.y-b.y);
         if(d < 170){
-          ctx.strokeStyle = `rgba(200,16,46,${0.12*(1-d/170)})`;
+          ctx.strokeStyle = `rgba(18,179,176,${0.16*(1-d/170)})`;
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
         }
       }
     }
     for(const n of nodes){
-      ctx.fillStyle = 'rgba(28,28,28,0.45)';
+      ctx.fillStyle = 'rgba(47,168,74,0.6)';
       ctx.beginPath(); ctx.arc(n.x,n.y,1.6,0,7); ctx.fill();
     }
     requestAnimationFrame(tick);
